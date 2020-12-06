@@ -17,11 +17,11 @@ def informacion(nombre):
   for linea in datos:
     # si contiene a los no terminales
     if "No terminales:" in linea:
-      N = linea.split(":")[1].strip().split(" ")
+      N = linea.split("No terminales:")[1].strip().split(" ")
       info["N"]=N
     # si contiene a los terminales
     elif "Terminales:" in linea:
-      M = linea.split(":")[1].strip().split(" ")
+      M = linea.split("Terminales:")[1].strip().split(" ")
       info["M"]=M
       if "First" not in info:
         info["First"]={}
@@ -63,7 +63,7 @@ def informacion(nombre):
         info["Gramatica"][cabecera].append(produccion)
       info["Producciones"].append([cabecera,produccion])
     elif "Inicial" in linea:
-      sep = linea.split(":")[1].strip()
+      sep = linea.split("Inicial:")[1].strip()
       info["Inicial"]=sep
 
   for key in info:
@@ -73,7 +73,7 @@ def informacion(nombre):
   return info
 
 if __name__ == '__main__':
-  nombre = "a"
+  nombre = "h.txt"
   info=informacion(nombre)
   for key in info:
     print(key,info[key])

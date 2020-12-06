@@ -128,4 +128,4 @@ def tablaLR1(nombre,archivo=False):
     archivo.close()
 
 if __name__ == '__main__':
-  tablaLR1("a",archivo=True)
+  tablaLR1("h.txt",archivo=True)
