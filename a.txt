@@ -1,0 +1,9 @@
+No terminales: S' S
+Terminales: ( ) $
+Inicial: S'
+First S': ( eps
+First S: ( eps
+Producciones
+S' → S
+S → S ( S )
+S → eps
