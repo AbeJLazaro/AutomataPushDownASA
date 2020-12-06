@@ -278,7 +278,7 @@ def CalcularAutomata(nombre):
   return tablita,estados
   
 if __name__ == '__main__':
-  tablita,estados=CalcularAutomata("b.txt")
+  tablita,estados=CalcularAutomata("a")
   for linea in tablita:
     print(linea)
   #print(estados[1])

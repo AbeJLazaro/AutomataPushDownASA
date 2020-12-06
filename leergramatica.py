@@ -1,5 +1,15 @@
+'''
+Autor:        Lázaro Martínez Abraham Josué
+Titulo:       leergramatica.py
+Versión:      1.0
+Fecha:        6 de diciembre de 2020
+'''
 def informacion(nombre):
+  '''Obtiene la información de la gramatica de los archivos
+  Parámetros
+  nombre: nombre del archivo que contiene la información de la gramática
 
+  return diccionario con la información gramatical'''
   archivo = open(nombre,"r")
   datos = archivo.readlines()
   archivo.close()
@@ -59,10 +69,11 @@ def informacion(nombre):
   for key in info:
     print(key,info[key])
   print("*"*70)
+
   return info
 
 if __name__ == '__main__':
-  nombre = "a.txt"
+  nombre = "a"
   info=informacion(nombre)
   for key in info:
     print(key,info[key])

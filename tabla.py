@@ -1,3 +1,9 @@
+'''
+Autor:        Lázaro Martínez Abraham Josué
+Titulo:       tabla.py
+Versión:      1.0
+Fecha:        6 de diciembre de 2020
+'''
 from autoLR1 import CalcularAutomata
 from leergramatica import informacion
 
@@ -122,4 +128,4 @@ def tablaLR1(nombre,archivo=False):
     archivo.close()
 
 if __name__ == '__main__':
-  tablaLR1("f.txt",archivo=True)
+  tablaLR1("a",archivo=True)
