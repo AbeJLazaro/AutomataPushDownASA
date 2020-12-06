@@ -9,14 +9,24 @@ Los archivos importantes son los archivos de Python
     + Se indica que simbolos son no terminales, cuales son terminales, que simbolo es el inicial, es necesario especificar como se muestra el conjunto First de los simbolos no terminales, y las producciones de la gramática deben especificarse después de la linea que dice Producciones
     + Todos los simbolos gramaticales deben estar separados entre espacios
     + la palabra eps representa la cadena vacía
+    
     No terminales: S' S
+    
     Terminales: ( ) $
+    
     Inicial: S'
+    
     First S': ( eps
+    
     First S: ( eps
+    
     Producciones
+    
     S' → S
+    
     S → S ( S )
+    
     S → eps
+    
 * tabla.py cuenta con la función tablaLR1 la cual recibe el nombre del archivo que contiene a la gramática y un parámetro booleano para indicar si se creará un archivo tipo csv para exportar la tabla
     
