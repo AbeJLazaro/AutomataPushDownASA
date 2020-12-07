@@ -5,7 +5,7 @@ Versión:      1.0
 Fecha:        6 de diciembre de 2020
 '''
 from autoLR1 import CalcularAutomata
-from leergramatica import informacion
+from leergramatica import informacion,imprimirGramatica
 
 def error(x,y,ant,nue):
   '''Función para indicar donde se encuentra un error'''
@@ -21,6 +21,7 @@ def tablaLR1(nombre,archivo=False):
 
   # obtenemos los datos de la gramática con la función informacion()
   datos = informacion(nombre)
+  imprimirGramatica(datos)
   # obtenemos la tabla de transiciones y los estados con CalcularAutomata()
   transiciones,estados=CalcularAutomata(nombre)
 
@@ -128,4 +129,5 @@ def tablaLR1(nombre,archivo=False):
     archivo.close()
 
 if __name__ == '__main__':
-  tablaLR1("h.txt",archivo=True)
+  nombre = input("Ingresa el nombre del archivo de la gramatica")
+  tablaLR1(nombre,archivo=True)

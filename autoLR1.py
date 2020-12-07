@@ -27,6 +27,26 @@ def combinar(beta,a):
   else:
     return beta+[a]
 
+def calcularAnulables():
+  '''Calcula que elementos son anulables'''
+
+  global gramatica, N, Anulables
+
+  Anulables = []
+  An = []
+  lon = -1
+  while(len(An)!=lon):
+    lon = len(An)
+    for n in N:
+      for produccion in gramatica[n]:
+        if produccion == [""] and n not in An:
+          An.append(n)
+        else:
+          noAn = len(list(filter(lambda x: x not in An,produccion)))
+          if noAn == 0 and n not in An:
+            An.append(n)
+  Anulables = An.copy()
+
 def first(x):
   '''Función para calcular el first de una cadena
 
@@ -35,7 +55,16 @@ def first(x):
 
   return lista con el conjunto first de las cadenas
   '''
-  return First[x[0]]
+  i = 0
+  A = []
+  while True:
+    A.extend(First[x[i]])
+    if x[i] in Anulables:
+      i+=1
+    else:
+      break
+
+  return list(filter(lambda x: x != "",A))
 
 def cerradura(I):
   '''
@@ -201,6 +230,7 @@ M = None
 gramatica = None
 inicial = None
 First = None
+Anulables = None
 
 def CalcularAutomata(nombre):
   '''Función principal para calcular el autómata push down
@@ -223,6 +253,8 @@ def CalcularAutomata(nombre):
 
   inicial = datos["Inicial"]
   First = datos["First"]
+
+  calcularAnulables()
 
   # [[cabecera,[producción],[prelectura],[indice del punto],...]
   # I0
@@ -278,7 +310,7 @@ def CalcularAutomata(nombre):
   return tablita,estados
   
 if __name__ == '__main__':
-  tablita,estados=CalcularAutomata("a")
+  tablita,estados=CalcularAutomata("j.txt")
   for linea in tablita:
     print(linea)
   #print(estados[1])

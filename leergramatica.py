@@ -66,14 +66,15 @@ def informacion(nombre):
       sep = linea.split("Inicial:")[1].strip()
       info["Inicial"]=sep
 
+  return info
+
+def imprimirGramatica(info):
   for key in info:
     print(key,info[key])
   print("*"*70)
 
-  return info
-
 if __name__ == '__main__':
-  nombre = "h.txt"
+  nombre = "a"
   info=informacion(nombre)
   for key in info:
     print(key,info[key])
