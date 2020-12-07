@@ -30,3 +30,6 @@ Los archivos importantes son los archivos de Python
     
 * tabla.py cuenta con la función tablaLR1 la cual recibe el nombre del archivo que contiene a la gramática y un parámetro booleano para indicar si se creará un archivo tipo csv para exportar la tabla
     
+* El archivo principal es el programa main.py, nos pedirá el nombre del archivo donde se encuentran las especificaciones de la gramática, ingresar el nombre del archivo con todo y su extensión.
+* Se imprime en consola la gramática, la función cerradura del primer elemento punteado, las funciones goto, la tabla de transiciones y la tabla para el análisis sintáctico LR1 
+* Si la gramática no es LR1, se mostrará un mensaje antes de la impresión de la tabla indicando las colisiones ocacionadas
