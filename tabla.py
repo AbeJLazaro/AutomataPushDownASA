@@ -128,6 +128,7 @@ def tablaLR1(nombre,archivo=False):
     archivo.write(imprimible)
     archivo.close()
 
+    return tabla,Producciones
 if __name__ == '__main__':
   nombre = input("Ingresa el nombre del archivo de la gramatica")
   tablaLR1(nombre,archivo=True)
