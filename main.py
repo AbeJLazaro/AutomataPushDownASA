@@ -9,5 +9,4 @@ cadenacomas = revisar(tabla,producciones)
 name = "Sol"+nombre
 archivo = open(name,"a")
 archivo.write(cadenacomas)
-archivo.close()
-'''
+archivo.close()'''
