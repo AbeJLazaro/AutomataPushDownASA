@@ -27,6 +27,8 @@ Los archivos importantes son los archivos de Python
     S → S ( S )
     
     S → eps
+
+    + NOTA: si te encuentras en Windows, usar la siguiente cadena como "produce": "->"
     
 * tabla.py cuenta con la función tablaLR1 la cual recibe el nombre del archivo que contiene a la gramática y un parámetro booleano para indicar si se creará un archivo tipo csv para exportar la tabla
     

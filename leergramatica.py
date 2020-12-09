@@ -4,12 +4,18 @@ Titulo:       leergramatica.py
 Versión:      1.0
 Fecha:        6 de diciembre de 2020
 '''
+
 def informacion(nombre):
   '''Obtiene la información de la gramatica de los archivos
   Parámetros
   nombre: nombre del archivo que contiene la información de la gramática
 
   return diccionario con la información gramatical'''
+  import sys
+  if sys.platform != "linux":
+    sec = "->"
+  else:
+    sec = "→"
   archivo = open(nombre,"r")
   datos = archivo.readlines()
   archivo.close()
@@ -47,7 +53,7 @@ def informacion(nombre):
         info["Gramatica"]={}
       if "Producciones" not in info:
         info["Producciones"]=[]
-      separacion = linea.split("→")
+      separacion = linea.split(sec)
       cabecera = separacion[0].strip()
       produccion = separacion[1].strip().split(" ")
       produccionp = []
